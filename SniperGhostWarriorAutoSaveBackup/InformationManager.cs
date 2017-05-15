@@ -16,9 +16,9 @@ namespace SniperGhostWarriorAutoSaveBackup
         public static void Save(object[] data)
         {
             RegistryKey key = Registry.CurrentUser.CreateSubKey("SOFTWARE\\SGW Auto Backup");
-            key.SetValue("Backup location", data[0] as string);
-            key.SetValue("Savegame location", data[1] as string);
-            key.SetValue("Auto backup", data[2] as bool?);
+            key.SetValue("Backup location", data[0] as string); // Saves backup path to registry
+            key.SetValue("Savegame location", data[1] as string); // Saves savegame path to registry
+            key.SetValue("Auto backup", data[2] as bool?); // Saves auto backup path to registry
             key.Close();
         }
 
